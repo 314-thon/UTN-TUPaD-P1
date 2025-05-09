@@ -127,7 +127,10 @@ else:
 # pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
 # pantalla.
 
-
+#solicitamos la frase al usuario
+frase = input("Ingrese una frase o palabra: ")
+#verificamos si termina con vocal
+print(frase + "!") if frase[-1].lower() in "aeiou" else print(frase)
 
 #----------------------------------------------------------------------------------------
 
@@ -141,7 +144,19 @@ else:
 # usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(),
 # lower() y title() de Python para convertir entre mayúsculas y minúsculas.
 
-
+#solicitamos el nombre al usuario
+nombre = input("Ingrese su nombre: ")
+#solicitamos la opcion al usuario
+opcion = int(input("Ingrese 1 para mayusculas, 2 para minusculas o 3 para capitalizar: "))
+#verificamos la opcion elegida
+if opcion == 1:
+    print(nombre.upper())
+elif opcion == 2:
+    print(nombre.lower())
+elif opcion == 3:
+    print(nombre.title())
+else:
+    print("Opcion no valida. Debe ingresar 1, 2 o 3.")
 
 #----------------------------------------------------------------------------------------
 
@@ -158,7 +173,23 @@ else:
 # ● Mayor o igual que 6 y menor que 7: "Muy Fuerte" (puede causar daños significativos).
 # ● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala).
 
-
+#solicitamos la magnitud al usuario
+magnitud = float(input("Ingrese la magnitud del terremoto: "))
+#verificamos la magnitud
+if magnitud < 3:
+    print("Muy leve (imperceptible)")
+elif magnitud >= 3 and magnitud < 4:
+    print("Leve (ligeramente perceptible)")
+elif magnitud >= 4 and magnitud < 5:
+    print("Moderado (sentido por personas, pero generalmente no causa daños)")
+elif magnitud >= 5 and magnitud < 6:
+    print("Fuerte (puede causar daños en estructuras débiles)")
+elif magnitud >= 6 and magnitud < 7:
+    print("Muy Fuerte (puede causar daños significativos)")
+elif magnitud >= 7:
+    print("Extremo (puede causar graves daños a gran escala)")
+else:
+    print("Magnitud no valida. Debe ingresar un numero.")
 
 #----------------------------------------------------------------------------------------
 
@@ -174,7 +205,40 @@ else:
 # del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
 # si el usuario se encuentra en otoño, invierno, primavera o verano.
 
+# Pedimos y validamos el mes
+mes = int(input("Ingrese el mes (1-12): "))
+if mes < 1 or mes > 12:
+    print("Mes inválido. Debe estar entre 1 y 12.")
+else:
+    # Pedimos y validamos el día
+    dia = int(input("Ingrese el día (1-31): "))
+    if dia < 1 or dia > 31:
+        print("Día inválido. Debe estar entre 1 y 31.")
+    else:
+        # Determinamos el rango estacional 
+        if (mes == 12 and dia >= 21) or (mes in [1, 2]) or (mes == 3 and dia <= 20):
+            estacion_norte = "Invierno"
+            estacion_sur = "Verano"
+        elif (mes == 3 and dia >= 21) or (mes in [4, 5]) or (mes == 6 and dia <= 20):
+            estacion_norte = "Primavera"
+            estacion_sur = "Otoño"
+        elif (mes == 6 and dia >= 21) or (mes in [7, 8]) or (mes == 9 and dia <= 20):
+            estacion_norte = "Verano"
+            estacion_sur = "Invierno"
+        elif (mes == 9 and dia >= 21) or (mes in [10, 11]) or (mes == 12 and dia <= 20):
+            estacion_norte = "Otoño"
+            estacion_sur = "Primavera"
+        else:
+            print("Fecha fuera de rango para determinar estación.")
 
+# Ahora pedimos y validamos el hemisferio
+hemisferio = input("Ingrese su hemisferio (N/S): ").upper()
+if hemisferio == "N":
+    print(estacion_norte)
+elif hemisferio == "S":
+    print(estacion_sur)
+else:
+    print("Hemisferio no válido. Debe ingresar N o S.")
 
 #----------------------------------------------------------------------------------------
 #Fin del trabajo práctico
