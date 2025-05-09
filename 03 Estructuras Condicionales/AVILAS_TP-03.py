@@ -40,6 +40,17 @@ print("Ha ingresado un numero par") if numero % 2 == 0 else print("Por favor, in
 # ● Adulto/a joven: mayor o igual que 18 años y menor que 30 años. 
 # ● Adulto/a: mayor o igual que 30 años.
 
+#solicitamos la edad al usuario
+edad = int(input("Ingrese su edad: "))
+if edad < 12:
+    print("Niño/a")
+elif edad >= 12 and edad < 18:
+    print("Adolescente")
+elif edad >= 18 and edad < 30:
+    print("Adulto/a joven")
+elif edad >= 30:
+    print("Adulto/a")
+else: pass
 
 #----------------------------------------------------------------------------------------
 
