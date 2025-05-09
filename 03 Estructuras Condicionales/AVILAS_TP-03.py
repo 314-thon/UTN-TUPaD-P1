@@ -61,6 +61,13 @@ else:
 # de la función len() en Python para evaluar la cantidad de elementos que tiene un iterable tal
 # como una lista o un string.
 
+#solicitamos la contraseña al usuario
+password = input("Ingrese su contraseña: ")
+#verificamos si la longitud es correcta
+if len(password) >= 8 and len(password) <= 14:
+    print("Ha ingresado una contraseña correcta")
+else:
+    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
 
 #----------------------------------------------------------------------------------------
 
