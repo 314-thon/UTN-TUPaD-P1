@@ -96,6 +96,28 @@ else:
 # Nota: el bloque de código anterior crea una lista con 50 números entre 1 y 100 elegidos de
 # forma aleatoria.
 
+from statistics import mode, median, mean
+import random
+# Definimos la lista numeros_aleatorios
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+# Calculamos la moda, mediana y media
+moda = mode(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+media = mean(numeros_aleatorios)
+# Imprimimos los resultados
+print("Lista de números aleatorios: ", numeros_aleatorios)
+print("Moda: ", moda)
+print("Mediana: ", mediana)
+print("Media: ", media)
+# Comparamos los resultados para determinar el sesgo
+if media > mediana > moda:
+    print("Sesgo positivo")
+elif media < mediana < moda:
+    print("Sesgo negativo")
+elif media == mediana == moda:
+    print("Sin sesgo")
+else:
+    print("No se puede determinar un sesgo claro")
 
 #----------------------------------------------------------------------------------------
 
@@ -104,6 +126,8 @@ else:
 # termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por
 # pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
 # pantalla.
+
+
 
 #----------------------------------------------------------------------------------------
 
@@ -135,6 +159,7 @@ else:
 # ● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala).
 
 
+
 #----------------------------------------------------------------------------------------
 
 #ejercicio 10
@@ -149,3 +174,7 @@ else:
 # del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
 # si el usuario se encuentra en otoño, invierno, primavera o verano.
 
+
+
+#----------------------------------------------------------------------------------------
+#Fin del trabajo práctico
