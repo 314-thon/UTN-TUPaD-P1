@@ -160,12 +160,31 @@ print(f"Cantidad de negativos: {negativos}")
 media de esos valores. (Nota: puedes probar el programa con una cantidad menor, pero debe 
 poder procesar 100 números cambiando solo un valor).
 """
+cantidad_numeros = 100  #se probó con 2 y luego se cambió a 100 para el ejercicio final
+#inicializamos la variable suma en 0
+suma = 0
 
+for i in range(cantidad_numeros):
+    numero = int(input(f"Ingrese el número {i+1}: "))
+    suma += numero
 
+media = float(suma) / cantidad_numeros
+print(f"La media de los números ingresados es: {media}")
 
 """
 10) Escribe un programa que invierta el orden de los dígitos de un número ingresado por el 
 usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745.
 """
+#solicitamos al usuario un número entero
+numero = input("Ingrese un número entero: ")
+#inicializamos la variable invertido en una cadena vacía
+invertido = ""
+#iniciamos un bucle que recorrerá el número ingresado de atrás hacia adelante
+for i in range(len(numero) - 1, -1, -1):
+    #concatenamos el dígito actual a la cadena invertida
+    invertido += numero[i]
+#imprimimos el número invertido
+print(f"El número invertido es: {invertido}")
 
-
+#----------------------------------------------------------------------------------------
+#Fin del trabajo práctico
