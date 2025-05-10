@@ -14,14 +14,41 @@ for i in range(101):
 dígitos que contiene.
 """
 
-
+#solicitamos al usuario un número entero
+numero = input("Ingrese un número entero: ")
+#verificamos si el número es negativo
+if numero[0] == "-":
+    #si es negativo, contamos los dígitos sin contar el signo
+    cantidad_digitos = len(numero) - 1
+else:
+    #si es positivo, contamos los dígitos normalmente
+    cantidad_digitos = len(numero)
+#imprimimos la cantidad de dígitos
+print(f"La cantidad de dígitos es: {cantidad_digitos}")
 
 """
 3) Escribe un programa que sume todos los números enteros comprendidos entre dos valores 
 dados por el usuario, excluyendo esos dos valores.
 """
 
-
+#solicitamos al usuario los dos valores
+valor1 = int(input("Ingrese el primer valor: "))
+valor2 = int(input("Ingrese el segundo valor: "))
+suma = 0
+#verificamos que ambos valores no sean iguales
+if valor1 == valor2:
+    print("Los valores ingresados son iguales.")
+else:
+    if valor1 < valor2:
+        #si es así, sumamos los números entre los dos valores
+        for i in range(valor1 + 1, valor2):
+            suma += i
+    else:
+        #si es al revés, invertimos los valores
+        for i in range(valor2 + 1, valor1):
+            suma += i
+        #imprimimos la suma
+    print(f"La suma de los números entre {valor1} y {valor2} es: {suma}")
 
 """
 4) Elabora un programa que permita al usuario ingresar números enteros y los sume en 
