@@ -56,13 +56,37 @@ secuencia. El programa debe detenerse y mostrar el total acumulado cuando el usu
 un 0.
 """
 
-
+#solicitamos al usuario un número entero para comenzar la suma
+numero = int(input("Ingrese un número entero (0 para salir): "))
+#inicializamos la variable suma en 0
+suma = 0
+#iniciamos un bucle que se repetirá mientras el número ingresado no sea 0
+while numero != 0:
+    #sumamos el número ingresado a la suma total
+    suma += numero
+    #solicitamos otro número al usuario
+    numero = int(input("Ingrese un número entero (0 para salir): "))
+#imprimimos la suma total
+print(f"La suma total es: {suma}")
 
 """
 5) Crea un juego en el que el usuario deba adivinar un número aleatorio entre 0 y 9. Al final, el 
 programa debe mostrar cuántos intentos fueron necesarios para acertar el número.
 """
 
+import random
+#generamos un número aleatorio entre 0 y 9
+numero_aleatorio = random.randint(0, 9)
+intentos = 0
+numero_usuario = -1  #inicializamos el número del usuario
+
+while numero_usuario != numero_aleatorio:
+    numero_usuario = int(input("Adivina un número entre 0 y 9: "))
+    intentos += 1
+    if numero_usuario == numero_aleatorio:
+        print(f"¡Felicidades! Adivinaste el número {numero_aleatorio} en {intentos} intentos.")
+    else:
+        print("Intenta de nuevo.")
 
 
 """
